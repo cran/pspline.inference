@@ -1,4 +1,4 @@
-## ----setup--------------------------------------------------------------------
+## ----setup, message=FALSE-----------------------------------------------------
 library(pspline.inference)
 
 library(mgcv)
@@ -17,7 +17,7 @@ source("parallel.R")
 source("figures.R")
 
 ## ----data---------------------------------------------------------------------
-obs <- read.csv("seasonal.csv")
+obs <- read.csv(system.file("extdata", "seasonal.csv", package="pspline.inference"))
 obs$cases.cum <- cumsum(obs$cases)
 obs$cases.cumrel <- obs$cases.cum / max(obs$cases.cum)
 
@@ -60,13 +60,6 @@ ggplot(casesSamples, c("casesObs", "casesEstSamples")) +
   geom_line(aes(x=time, y=cases, group=pspline.sample, color="casesEstSamples")) +
   geom_point(data=obs, aes(x=time, y=cases, color="casesObs", size="casesObs")) +
   labs(y="Cases")
-
-## ----cases estimates and stats, eval=vignette.eval$full-----------------------
-casesSamples <- model %>%
-  pspline.sample.timeseries(predictors, pspline.outbreak.cases, samples=100)
-  
-casesEst <- casesSamples %>% 
-  pspline.confints.timeseries(model, level=0.95)
 
 ## ----custom time series calc--------------------------------------------------
 seriousDiseaseCases <- function(model, data) {
@@ -127,13 +120,6 @@ seriousEst <- model %>%
     samples=n, 
     level=0.95
   )
-
-## ----custom est parameterized plot, eval=vignette.eval$full-------------------
-ggplot(seriousEst, c("casesObs", "casesEstMedian", "seriousEstMedian")) +
-  geom_line(aes(x=time, y=seriouscases.cum.median, color="seriousEstMedian")) +
-  geom_line(data=cumCasesEst, aes(x=time, y=cases.cum.median, color="casesEstMedian")) +
-  geom_point(data=obs, aes(x=time, y=cases.cum, color="casesObs", size="casesObs")) +
-  labs(y="Cases")
 
 ## ----estimate supply duration, message=FALSE----------------------------------
 medicationSupplyEnd <- function(medicationQuantity) {
@@ -219,7 +205,7 @@ makeModel <- function(data) {
   gam(cases ~ s(time, k=20, bs="cp", m=3), family=poisson, data=data)
 }
 
-## ----validate supply duration, eval=vignette.eval$full------------------------
+## ----validate supply duration, message=FALSE, warning=FALSE, include=FALSE, eval=vignette.eval$full----
 set.seed(0)
 validationResults = pspline.validate.scalars(
   fun.truth=generateTruths,
@@ -236,7 +222,7 @@ validationResults = pspline.validate.scalars(
 kable_styling(
   kable(
     sprintf("%.2f%%", validationResults$summary$supply.duration.good * 100), 
-    caption="Validation results: frequency with which true value is included in the 95% CI", 
+    caption="Coverage: frequency with which true value is included in the 95% CI", 
     col.names=c("Supply duration")
   )
 )
