@@ -1,4 +1,4 @@
-2694faa31b6999a7aa331653eb1e59ad *DESCRIPTION
+4141ccbc5503a0434f323a2c58c418b9 *DESCRIPTION
 9df09acdc83d945145845ff39ae46ee3 *NAMESPACE
 ef948437cfa28485eab661e768c88c91 *R/outbreak.R
 4b3f48f7d87cbd98632b282c9c2e4c07 *R/package.R
@@ -10,7 +10,7 @@ c78fb9ad6111ee852319db3b6046fdee *README.md
 08f99470c8f2d648b7b7521cdf3d88e0 *build/vignette.rds
 628dd39133c120002a806c1ef1ead2f5 *inst/doc/seasonal.R
 c87fda50c7f6dfe24c20c4ce16e020bb *inst/doc/seasonal.Rmd
-73a1a6abd1ad93e531f672d5453430d2 *inst/doc/seasonal.html
+1506c7fb2ef48f2095c9d81a38c6e62c *inst/doc/seasonal.html
 eee1c3f61e06b6705d2728bac91047eb *inst/extdata/seasonal.csv
 e20ff63e82fea526384d72cd22e2ffad *man/check.scalars.Rd
 6baf3ecee2a639674f8c1870011b3d17 *man/confints.outcomes.Rd
