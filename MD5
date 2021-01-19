@@ -1,4 +1,4 @@
-4141ccbc5503a0434f323a2c58c418b9 *DESCRIPTION
+3d57b85969fe6a51e3e7d7f10cbf770b *DESCRIPTION
 9df09acdc83d945145845ff39ae46ee3 *NAMESPACE
 ef948437cfa28485eab661e768c88c91 *R/outbreak.R
 4b3f48f7d87cbd98632b282c9c2e4c07 *R/package.R
@@ -10,7 +10,7 @@ c78fb9ad6111ee852319db3b6046fdee *README.md
 08f99470c8f2d648b7b7521cdf3d88e0 *build/vignette.rds
 628dd39133c120002a806c1ef1ead2f5 *inst/doc/seasonal.R
 c87fda50c7f6dfe24c20c4ce16e020bb *inst/doc/seasonal.Rmd
-1506c7fb2ef48f2095c9d81a38c6e62c *inst/doc/seasonal.html
+0259879d6018003048eebd3f3aad6421 *inst/doc/seasonal.html
 eee1c3f61e06b6705d2728bac91047eb *inst/extdata/seasonal.csv
 e20ff63e82fea526384d72cd22e2ffad *man/check.scalars.Rd
 6baf3ecee2a639674f8c1870011b3d17 *man/confints.outcomes.Rd
@@ -36,6 +36,6 @@ b838b003095d8add15c2dfcb758dd05c *man/truth.results.scalars.Rd
 20fde5313d10689a56abdd620cf5f85e *tests/testthat.R
 ec6ab2d3a7f6fa8b10fe67bdff14417f *tests/testthat/test-estimate.R
 09a6c47e6d2ac0e3e382069737a89f22 *vignettes/cran.R
-22bd0d8393164ccc4d0da2026dc2962a *vignettes/figures.R
+ce6b2ba41d6c64373815cffe55118436 *vignettes/figures.R
 abbbc00f35c4bc6842179ee7c3dca5aa *vignettes/parallel.R
 c87fda50c7f6dfe24c20c4ce16e020bb *vignettes/seasonal.Rmd
